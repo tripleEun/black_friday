@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <title>스와이퍼 예제</title>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <img src="tempp.png" alt="">
+      </div>
+      <div class="swiper-slide">
+          <img src="tempp.png" alt="">
+      </div>
+      <div class="swiper-slide">
+          <img src="tempp.png" alt="">
+    </div>
+  </div>
+</div>
+
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', { 
+        slidesPerView: 1, // 보여지는 슬라이드 수 
+        spaceBetween: 5, // 슬라이드 간의 거리(px 단위)
+        slidesPerGroup : 1,
+        //loop: true, // 슬라이드 무한 반복
+        //centeredSlides: true, // 다음 슬라이드의 모습이 50%만 보입니다.(중앙) 
+        });
+    //new Swiper('.swiper-container', {
+
+	//slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
+	//spaceBetween : 10, // 슬라이드간 간격
+	//slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+
+	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+	//loopFillGroupWithBlank : true,
+
+	//loop : true, // 무한 반복
+
+	// pagination : { // 페이징
+	// 	el : '.swiper-pagination',
+	// 	clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+	// },
+	// navigation : { // 네비게이션
+	// 	nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+	// 	prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	// },
+//});
+    
+  </script>
+  <style>
+ .swiper-slide {
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+}
+*{margin: 0; padding: 0; border: 0; font-size: 0;}
+body{max-width: 700px; margin: 0 auto;}
+
+  </style>
+</body>
+</html>
