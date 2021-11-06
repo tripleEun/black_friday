@@ -14,12 +14,37 @@
         //     spaceBetween: 5, 
         // });
                 $(document).ready(function(){
-            var swiper = new Swiper('.swiper-container', { 
+            var swiper1 = new Swiper('.swiper1', { 
+                // slidesPerView: 1,
+                // spaceBetween: 1, 
+                loop :true,      
+                slidesPerGroup : 3,
+               slidesPerView: 4,
+        centeredSlides: false,
+        //spaceBetween: 30,
+      });
+            });
+            
+        
+        $(document).ready(function(){
+            var swiper2 = new Swiper('.swiper2', { 
                 slidesPerView: 1,
-                spaceBetween: 5, 
+                spaceBetween: 1, 
+                loop :true
                 //slidesPerGroup : 1,
             });
+            
         });
+        $(document).ready(function(){
+            var swiper3 = new Swiper('.swiper3', { 
+                slidesPerView: 1,
+                spaceBetween: 1, 
+                loop :true
+                //slidesPerGroup : 1,
+            });
+            
+        })
+        
     </script>
     <style>
         *{margin: 0; padding: 0; border: 0; font-size: 0;}
@@ -52,8 +77,11 @@
 
         #event-wrap .bottomBtn{display: block; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);}
     
-        .swiper-container {overflow: hidden }
-        .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; }
+        .swiper-container.swiper1 {overflow: hidden; }
+        .swiper-container.swiper2 {overflow: hidden; }
+        .swiper-container.swiper3 {overflow: hidden; }
+         .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; } 
+         
     </style>
 </head>
 <body>
@@ -128,7 +156,7 @@
         <div class="event02">
             <img src="event02_bg.png" alt="">
             <!-- 놈희씨 여기다 구현하세요 -->
-             <div class="swiper-container">
+             <div class="swiper-container swiper1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
@@ -139,7 +167,7 @@
         </div>
         <div class="event03">
             <img src="event03_bg.png" alt="">
-             <!--<div class="swiper-container swiper2">
+             <div class="swiper-container swiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
@@ -150,13 +178,13 @@
         </div>
         <div class="event04">
             <img src="event04_bg.png" alt="">
-             <!--<div class="swiper-container swiper3">
+             <div class="swiper-container swiper3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
                     </div>
                 </div>
-            </div>-->
+            </div>
             <img src="event_common.png" alt="">
         </div>
         <div class="event05">
