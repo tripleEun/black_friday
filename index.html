@@ -7,6 +7,14 @@
     <link rel="stylesheet" type="text/css" href="https://www.esthermall.co.kr/wm_engine_SW/_engine/common/jquery/jquery-ui.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>에스더몰</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', { 
+            slidesPerView: 1,
+            spaceBetween: 5, 
+            //slidesPerGroup : 1,
+        });
+    </script>
     <style>
         *{margin: 0; padding: 0; border: 0; font-size: 0;}
         .ex{position: fixed; height: 70px; width: 100%; background: green; z-index: 10;}
@@ -38,7 +46,7 @@
 
         #event-wrap .bottomBtn{display: block; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);}
     
-        .swiper-container swiper1 swiper2 swiper3 {overflow: hidden }
+        .swiper-container {overflow: hidden }
         .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; }
     </style>
 </head>
@@ -114,7 +122,7 @@
         <div class="event02">
             <img src="event02_bg.png" alt="">
             <!-- 놈희씨 여기다 구현하세요 -->
-             <div class="swiper-container swiper1">
+             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
@@ -125,24 +133,24 @@
         </div>
         <div class="event03">
             <img src="event03_bg.png" alt="">
-             <div class="swiper-container swiper2">
+             <!--<div class="swiper-container swiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
                      </div>
                 </div>
-            </div>
+            </div>-->
             <img src="event_common.png" alt="">
         </div>
         <div class="event04">
             <img src="event04_bg.png" alt="">
-             <div class="swiper-container swiper3">
+             <!--<div class="swiper-container swiper3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="tempp.png" alt="">
                     </div>
                 </div>
-            </div>
+            </div>-->
             <img src="event_common.png" alt="">
         </div>
         <div class="event05">
@@ -155,23 +163,7 @@
         </div> 
         <div class="dim"></div>
     </div>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper1 = new Swiper('.swiper-container swiper1', { 
-            slidesPerView: 1,
-            spaceBetween: 5, 
-            //slidesPerGroup : 1,
-        });
-        var swiper2 = new Swiper('.swiper-container swiper2', { 
-            slidesPerView: 1,
-            spaceBetween: 5, 
-            //slidesPerGroup : 1,
-        });
-        var swiper3 = new Swiper('.swiper-container swiper3', { 
-            slidesPerView: 1,
-            spaceBetween: 5, 
-            //slidesPerGroup : 1,
-        });
-    </script>
+    
+
 </body>
 </html>
