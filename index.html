@@ -1,70 +1,177 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <title>스와이퍼 예제</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://www.esthermall.co.kr/wm_engine_SW/_engine/common/jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>에스더몰</title>
+    <style>
+        *{margin: 0; padding: 0; border: 0; font-size: 0;}
+        .ex{position: fixed; height: 70px; width: 100%; background: green; z-index: 10;}
+        #event-wrap{padding-top: 70px;}
+
+        /* #event-wrap * {margin: 0; padding: 0; border: 0; font-size: 0;} */
+        #event-wrap ul, li{list-style: none;}
+
+        #event-wrap{max-width: 700px; margin: 0 auto;}
+        #event-wrap nav{position: sticky; top: 70px; z-index: 10;}
+        #event-wrap nav ul{display: flex;}
+        #event-wrap nav ul li{width: 25%;}
+        #event-wrap nav ul li img{width: 100%;}
+        #event-wrap nav ul li .on{display: none;}
+        #event-wrap nav ul li .off{display: block;}
+        #event-wrap nav ul li.on .on{display: block;}
+        #event-wrap nav ul li.on .off{display: none;}
+        
+        #event-wrap [class^="event"]{position: relative;}
+        #event-wrap [class^="event"] .btn{position: absolute; left: 50%; transform: translateX(-50%);}
+        
+        #event-wrap .event01_02 .btn:nth-child(1){top: 0;}
+        #event-wrap .event01_02 .btn:nth-child(2){bottom: 100px;}
+        #event-wrap .event01_03 .btn:nth-child(1){top: 515px;}
+        #event-wrap .event01_03 .btn:nth-child(2){bottom: 260px;}
+        #event-wrap .event01_03 .btn:nth-child(3){bottom: 155px;}
+        #event-wrap .event-notice .btn:nth-child(1){bottom: 160px;}
+        #event-wrap .event-notice .btn:nth-child(2){bottom: 30px;}
+
+        #event-wrap .bottomBtn{display: block; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);}
+    
+        .swiper-container swiper1 swiper2 swiper3 {overflow: hidden }
+        .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; }
+    </style>
 </head>
 <body>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <img src="tempp.png" alt="">
-      </div>
-      <div class="swiper-slide">
-          <img src="tempp.png" alt="">
-      </div>
-      <div class="swiper-slide">
-          <img src="tempp.png" alt="">
-    </div>
-  </div>
-</div>
-
-  
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper('.swiper-container', { 
-        slidesPerView: 1, // 보여지는 슬라이드 수 
-        spaceBetween: 5, // 슬라이드 간의 거리(px 단위)
-        slidesPerGroup : 1,
-        //loop: true, // 슬라이드 무한 반복
-        //centeredSlides: true, // 다음 슬라이드의 모습이 50%만 보입니다.(중앙) 
-        });
-    //new Swiper('.swiper-container', {
-
-	//slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
-	//spaceBetween : 10, // 슬라이드간 간격
-	//slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
-
-	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-	//loopFillGroupWithBlank : true,
-
-	//loop : true, // 무한 반복
-
-	// pagination : { // 페이징
-	// 	el : '.swiper-pagination',
-	// 	clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	// },
-	// navigation : { // 네비게이션
-	// 	nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-	// 	prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	// },
-//});
     
-  </script>
-  <style>
- .swiper-slide {
-	text-align:center;
-	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
-}
-*{margin: 0; padding: 0; border: 0; font-size: 0;}
-body{max-width: 700px; margin: 0 auto;}
-.swiper-container{overflow: hidden}
-  </style>
+    
+    <div class="ex"></div>
+    <div id="event-wrap">
+        <nav>
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                        <img src="nav01_on.png" alt="" class="on">
+                        <img src="nav01_off.png" alt="" class="off">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="nav02_on.png" alt="" class="on">
+                        <img src="nav02_off.png" alt="" class="off">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="nav03_on.png" alt="" class="on">
+                        <img src="nav03_off.png" alt="" class="off">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="nav04_on.png" alt="" class="on">
+                        <img src="nav04_off.png" alt="" class="off">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="event-main">
+            <img src="main_bg.png" alt="">
+        </div>
+        <div class="event01">
+            <img src="event01_bg01.png" alt="">
+            <div class="event01_02">
+                <a href="https://www.esthermall.co.kr/shop/detail.php?pno=D86EA612DEC96096C5E0FCC8DD42AB6D" target="_blank" class="btn">
+                    <img src="event01_btn01.png" alt="">
+                </a>
+                <a href="https://pf.kakao.com/_YYUxaV/chat" target="_blank" class="btn">
+                    <img src="event01_btn02.png" alt="">
+                </a>
+                <img src="event01_bg02.png" alt="">
+            </div>
+            <div class="event01_03">
+                <a href="https://pf.kakao.com/_YYUxaV/chat" target="_blank" class="btn">
+                    <img src="event01_btn03.png" alt="">
+                </a>
+                <a href="https://www.esthermall.co.kr/member/login.php" target="_blank" class="btn">
+                    <img src="event01_btn04.png" alt="">
+                </a>
+                <a href="javascript:;" class="btn">
+                    <img src="event01_btn05.png" alt="">
+                </a>
+                <img src="event01_bg03.png" alt="">
+            </div>
+        </div>
+        <div class="event-notice">
+            <a href="javascript:;" class="btn">
+                <img src="notice_btn01.png" alt="">
+            </a>
+            <a href="javascript:;" class="btn">
+                <img src="notice_btn02.png" alt="">
+            </a>
+            <img src="notice_bg.png" alt="">
+        </div>
+        <div class="event02">
+            <img src="event02_bg.png" alt="">
+            <!-- 놈희씨 여기다 구현하세요 -->
+             <div class="swiper-container swiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="tempp.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <img src="event_common.png" alt="">
+        </div>
+        <div class="event03">
+            <img src="event03_bg.png" alt="">
+             <div class="swiper-container swiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="tempp.png" alt="">
+                     </div>
+                </div>
+            </div>
+            <img src="event_common.png" alt="">
+        </div>
+        <div class="event04">
+            <img src="event04_bg.png" alt="">
+             <div class="swiper-container swiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="tempp.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <img src="event_common.png" alt="">
+        </div>
+        <div class="event05">
+            <img src="event05_bg.png" alt="">
+        </div>
+        <a href="https://www.esthermall.co.kr/shop/detail.php?pno=D86EA612DEC96096C5E0FCC8DD42AB6D" target="_blank" class="bottomBtn">
+            <img src="main_btn.png" alt="">
+        </a>
+        <div id="popup01" class="modal">
+        </div> 
+        <div class="dim"></div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper1 = new Swiper('.swiper-container swiper1', { 
+            slidesPerView: 1,
+            spaceBetween: 5, 
+            //slidesPerGroup : 1,
+        });
+        var swiper2 = new Swiper('.swiper-container swiper2', { 
+            slidesPerView: 1,
+            spaceBetween: 5, 
+            //slidesPerGroup : 1,
+        });
+        var swiper3 = new Swiper('.swiper-container swiper3', { 
+            slidesPerView: 1,
+            spaceBetween: 5, 
+            //slidesPerGroup : 1,
+        });
+    </script>
 </body>
 </html>
