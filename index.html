@@ -15,9 +15,16 @@
         // });
                 $(document).ready(function(){
             var swiper1 = new Swiper('.swiper1', { 
-                 slidesPerView: 1,
-                 spaceBetween: 1, 
-                 loop :true,      
+                 //slidesPerView: 1,
+                 spaceBetween: 3, 
+                 loop :true,  
+                   //autoplay: true,
+
+              slidesPerView: 'auto',
+
+        //spaceBetween: 10,
+
+        centeredSlides: true    
         //         slidesPerGroup : 3,
         //        slidesPerView: 4,
         // centeredSlides: false,
@@ -28,18 +35,20 @@
         
         $(document).ready(function(){
             var swiper2 = new Swiper('.swiper2', { 
-                slidesPerView: 1,
+               slidesPerView: 'auto',
                 spaceBetween: 1, 
-                loop :true
+                loop :true,
+                centeredSlides: true   
                 //slidesPerGroup : 1,
             });
             
         });
         $(document).ready(function(){
             var swiper3 = new Swiper('.swiper3', { 
-                slidesPerView: 1,
+                slidesPerView: 'auto',
                 spaceBetween: 1, 
-                loop :true
+                loop :true,
+                centeredSlides: true  
                 //slidesPerGroup : 1,
             });
             
@@ -77,10 +86,10 @@
 
         #event-wrap .bottomBtn{display: block; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);}
     
-        .swiper-container.swiper1 {overflow: hidden; }
-        .swiper-container.swiper2 {overflow: hidden; }
-        .swiper-container.swiper3 {overflow: hidden; }
-         .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; } 
+        .swiper-container.swiper1 {overflow: hidden; padding: 20px;}
+        .swiper-container.swiper2 {overflow: hidden; padding: 20px;}
+        .swiper-container.swiper3 {overflow: hidden; padding: 20px;}
+         .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; width: 90%; margin-left: 10px; margin-right: 13px;} 
          
     </style>
 </head>
